@@ -5,5 +5,15 @@
     "typography": "فۆنت و پیت",
     "buttons": "دوگمەکان",
     "cards": "کارتەکان"
+  },
+  "Housewarming": {
+    "heroTitle": "بۆنەی ماڵی نوێ",
+    "invitationLine": "بە خۆشحاڵییەوە داواتان دەکەین بەشداری یەکەم ئێوارەی ماڵی نوێمان بن",
+    "thankYouLine": "سوپاس بۆ بەشداریتان لە یەکەم ڕۆژەکانی ماڵی نوێمان",
+    "platformCredit": "Invita",
+    "countdownBefore": "ماوەیەکی کەم ماوە",
+    "countdownToday": "ئەمڕۆیە!",
+    "countdownTomorrow": "سبەینێ ڕۆژی خۆشحاڵیمانە",
+    "mapCta": "بینینی شوێن لەسەر نەخشە"
   }
 }

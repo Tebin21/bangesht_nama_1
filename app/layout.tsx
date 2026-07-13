@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { MotionProvider } from "@/engine/motion/MotionProvider";
+import { ScrollProvider } from "@/engine/motion/ScrollProvider";
 import "./globals.css";
 
 // Invita-Visual-Identity-System.md §12: Doran is the only typeface, exactly
@@ -40,7 +42,9 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-ivory text-ink">
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <MotionProvider>
+            <ScrollProvider>{children}</ScrollProvider>
+          </MotionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -12,6 +12,8 @@ import { GoldDivider } from "@/design-system/atoms/GoldDivider";
 import { GlassSurface } from "@/design-system/atoms/GlassSurface";
 import { Button } from "@/design-system/molecules/Button";
 import { Card } from "@/design-system/organisms/Card";
+import { MotionDemo } from "./MotionDemo";
+import { ThreeFoundationDemo } from "./ThreeFoundationDemo";
 
 const SWATCHES = [
   { name: "Ivory", className: "bg-ivory" },
@@ -114,6 +116,24 @@ export default async function StyleGuidePage() {
             <Body>Raw GlassSurface atom, for comparison against the Card organism above.</Body>
           </GlassSurface>
         </Stack>
+      </Section>
+
+      <GoldDivider />
+
+      <Section>
+        <Heading variant="sectionTitle" className="mb-4">
+          Motion (Sprint 3 infrastructure)
+        </Heading>
+        <MotionDemo />
+      </Section>
+
+      <GoldDivider />
+
+      <Section>
+        <Heading variant="sectionTitle" className="mb-4">
+          3D Foundation (Sprint 4 infrastructure)
+        </Heading>
+        <ThreeFoundationDemo />
       </Section>
     </Container>
   );

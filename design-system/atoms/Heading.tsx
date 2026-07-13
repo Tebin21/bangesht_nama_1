@@ -1,4 +1,4 @@
-import type { ElementType, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
 const VARIANT_CLASSNAMES = {
@@ -11,9 +11,17 @@ const VARIANT_CLASSNAMES = {
 
 type HeadingVariant = keyof typeof VARIANT_CLASSNAMES;
 
+// Narrowed from a generic `ElementType` (Sprint 4 fix): installing
+// @react-three/fiber globally augments JSX.IntrinsicElements with Three.js
+// elements, which collapses a fully-generic `ElementType`'s children type
+// to `never` when used polymorphically (a known TS+R3F interaction). This
+// atom only ever renders semantic heading tags, so a literal union avoids
+// the issue entirely without any behavior change.
+type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
 type HeadingProps = {
   variant?: HeadingVariant;
-  as?: ElementType;
+  as?: HeadingTag;
   className?: string;
   children: ReactNode;
 };
