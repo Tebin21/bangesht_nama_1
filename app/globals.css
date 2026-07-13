@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — sourced from design-system/tokens/*.ts, which mirror
+ * these same values. See Invita-Visual-Identity-System.md §11-19 for the
+ * documented ranges/categories each concrete value was chosen from.
+ */
+@theme {
+  /* Colors — §11 */
+  --color-ivory: #fbf7f0;
+  --color-ivory-deep: #f7f1e8;
+  --color-ink: #211d18;
+  --color-ink-soft: #2a2420;
+  --color-sage: #7c8b6f;
+  --color-sage-light: #8fa07e;
+  --color-dusk-plum: #6b4e4a;
+  --color-dusk-plum-light: #8a6560;
+  --color-amber: #c98a3e;
+  --color-amber-light: #d9a05c;
+  --color-foil-gold: #e7c77d;
+  --color-antique-gold: #b8905a;
+  --color-antique-gold-deep: #a87f4c;
+  --color-shadow-gold: #7a5a34;
+  --color-deep-background: #17140f;
+  --color-muted-neutral: #8a8378;
+  --color-success: #6b8f5e;
+  --color-warning: #b8823d;
+  --color-danger: #a85c4a;
+  --color-info: #6e7f8c;
+
+  /* Spacing base unit — §13, space-1 = 4px (Tailwind default already matches) */
+  --spacing: 0.25rem;
+
+  /* Radius — §15 */
+  --radius-card: 16px;
+  --radius-glass: 16px;
+  --radius-button: 20px;
+  --radius-input: 20px;
+  --radius-photo-frame: 4px;
+  --radius-floating: 9999px;
+
+  /* Shadow — §16, large-blur/low-opacity only, never small-blur/high-opacity */
+  --shadow-ambient: 0 4px 16px rgba(33, 29, 24, 0.06);
+  --shadow-glass: 0 8px 32px rgba(33, 29, 24, 0.08);
+  --shadow-luxury: 0 2px 8px rgba(33, 29, 24, 0.05), 0 16px 48px rgba(33, 29, 24, 0.08);
+  --shadow-floating: 0 12px 40px rgba(33, 29, 24, 0.1);
+  --shadow-golden-glow: 0 0 24px rgba(201, 138, 62, 0.15);
+
+  /* Fonts — §12, Doran Bold/Medium only, injected as CSS vars by next/font/local */
+  --font-doran-medium: var(--font-doran-medium);
+  --font-doran-bold: var(--font-doran-bold);
+
+  /* Type scale — §12. Steps named qualitatively in the source doc; sizes
+     are this sprint's formalization (see design-system/tokens/typography.ts). */
+  --text-display: 2.5rem;
+  --text-display--line-height: 1.1;
+  --text-hero: 2rem;
+  --text-hero--line-height: 1.1;
+  --text-section-title: 1.5rem;
+  --text-section-title--line-height: 1.2;
+  --text-card-title: 1.25rem;
+  --text-card-title--line-height: 1.3;
+  --text-body-large: 1.125rem;
+  --text-body-large--line-height: 1.55;
+  --text-body: 1rem;
+  --text-body--line-height: 1.55;
+  --text-body-small: 0.875rem;
+  --text-body-small--line-height: 1.5;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+  --text-invitation-names: 1.375rem;
+  --text-invitation-names--line-height: 1.2;
+  --text-button: 1rem;
+  --text-button--line-height: 1.2;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-doran-medium), sans-serif;
+}
+
+/* §15 Dialogs/Sheets: largest radius, top corners only — asymmetric, so not a Tailwind radius theme key */
+.rounded-dialog-top {
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+}
